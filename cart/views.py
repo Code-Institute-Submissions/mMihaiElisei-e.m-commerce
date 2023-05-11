@@ -1,8 +1,104 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from products.models import Product, Variation
+from .models import Cart, CartItem
+from django.contrib import messages
 
-# Create your views here.
 
 
 def view_cart(request):
     """ A view that renders the cart contents page """
     return render(request, 'cart/cart.html')
+
+def _cart_id(request):
+    """ A private function to get the cart id from the current session or create a new session """
+
+    cart = request.session.session_key  # Get the session id
+    if not cart:
+        # Create a new session if there is no session available
+        cart = request.session.create()
+    return cart
+
+
+def add_to_cart(request, product_id):
+    """ A view that manages add items to the cart
+        and products variation 
+     """
+
+    product = Product.objects.get(id=product_id)
+    product_variation = []
+
+    # Product Variations for colors and sizes
+    if request.method == 'POST':
+        for item in request.POST:
+            key = item
+            value = request.POST[key]
+
+            try:
+                variation = Variation.objects.get(
+                    product=product,
+                    variation_category__iexact=key,
+                    variation_value__iexact=value,
+                )
+                product_variation.append(variation)
+            except:
+                pass
+
+    try:
+        # get the cart using the cart id present in the session
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+    except Cart.DoesNotExist:
+        cart = Cart.objects.create(
+            # Create a new cart if there is no cart session created
+            cart_id=_cart_id(request)
+        )
+    cart.save()
+
+    if product_variation:
+        messages.success(
+            request, f'Added {product.name} with color {product_variation[0]} and size {product_variation[1]} to your cart')
+    else:
+        messages.success(request, f'Added {product.name} to your cart')
+    cart_item_exists = CartItem.objects.filter(
+        product=product, cart=cart).exists()
+
+    if cart_item_exists:
+        cart_item = CartItem.objects.filter(
+            product=product,
+            cart=cart
+        )
+        existing_variation_list = []
+        id = []
+        for item in cart_item:  # If the cart item exists loop the cart item and get variations for each item
+            existing_variation = item.variations.all()
+            existing_variation_list.append(list(existing_variation))
+            id.append(item.id)
+
+        if product_variation in existing_variation_list:
+            index = existing_variation_list.index(product_variation)
+            # Get the item id of the correct cart item to increse the quantity of the correct cart item
+            item_id = id[index]
+            item = CartItem.objects.get(product=product, id=item_id)
+            item.quantity += 1
+            item.save()
+        else:
+            item = CartItem.objects.create(
+                product=product,
+                quantity=1,
+                cart=cart
+            )
+            if len(product_variation) > 0:
+                item.variations.clear()
+                item.variations.add(*product_variation)
+            item.save()
+    else:
+        cart_item = CartItem.objects.create(
+            product=product,
+            quantity=1,
+            cart=cart
+        )
+        if len(product_variation) > 0:
+            cart_item.variations.clear()
+            cart_item.variations.add(*product_variation)
+        cart_item.save()
+    
+    return redirect('view_cart')
