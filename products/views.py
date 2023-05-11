@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models.functions import Lower
 from django.db.models import Q
-from .models import Product, Category, ReviewRating
+from .models import Product, ReviewRating, Category
 from .forms import ReviewForm
 # Create your views here.
 
@@ -61,11 +61,12 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details"""
-   
+
     product = get_object_or_404(Product, pk=product_id)
 
     # Get the reviews
     reviews = ReviewRating.objects.filter(product_id=product.id, status=True)
+
     context = {
         'product': product,
         'reviews': reviews,
