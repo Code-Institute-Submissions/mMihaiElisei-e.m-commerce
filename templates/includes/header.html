@@ -49,7 +49,7 @@
                         <a href="#" class="dropdown-item">All Products</a>
                         {% for category in categories %}
                         <a class="dropdown-item"
-                            href="#">{{ category.name }}</a>
+                            href="{% url 'products' %}?category={{ category.name }}">{{ category.name }}</a>
                         {% endfor %}
                     </div>
                 </div>
