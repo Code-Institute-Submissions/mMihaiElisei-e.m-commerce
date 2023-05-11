@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+
+    # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +65,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "em_com.urls"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 TEMPLATES = [
     {
@@ -168,3 +173,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 FREE_DELIVERY_THRESHOLD = 100
 STANDARD_DELIVERY_PRICE = 50
+STRIPE_CURRENCY = 'eur'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
