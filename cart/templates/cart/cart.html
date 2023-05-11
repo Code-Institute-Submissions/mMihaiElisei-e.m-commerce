@@ -58,7 +58,7 @@
                                         <div class="input-group input-spinner" style="width: 130px;">
                                             <div class="input-group-prepend">
                                                 <a class=" btn btn-sm btn-black rounded-0"
-                                                    href="#"
+                                                    href="{% url 'remove_from_cart' cart_item.product.id cart_item.id %}"
                                                     id="button-plus"> <i class="fa fa-minus"></i> </a>
                                             </div>
                                             <input type="text" class="form-control" value="{{ cart_item.quantity }}">
@@ -87,7 +87,7 @@
                                     <td>
                                         <div>
                                             <a class="btn btn-sm remove-item btn-danger float-right"
-                                                href="#">Remove</a>
+                                                href="{% url 'remove_cart_item' cart_item.product.id cart_item.id %}">Remove</a>
                                         </div>
                                     </td>
                                 </tr>
