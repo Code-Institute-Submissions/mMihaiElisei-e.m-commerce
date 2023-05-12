@@ -40,6 +40,9 @@ html {
     color: white;
 }
 
+.bg-black {
+    background: #000 !important;
+}
 
 .clearance-wrapper {
     background-color: #FC2947;
