@@ -25,8 +25,8 @@ SECRET_KEY = "django-insecure-@bgjbr05a5jk2qg%nq=$(49yf-k4$fon&v(591rbj7i3e*wbt6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-slxfanw723.us2.codeanyapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-slxfanw723.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com']
 
 # Application definition
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     # Other
     'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -174,5 +175,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 FREE_DELIVERY_THRESHOLD = 100
 STANDARD_DELIVERY_PRICE = 50
 STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51N2yKrJkGwVLZn0MlIIwQ9R5cjNwxylgpa3dxVFA8OQS58lsKNVoLpJWBoBsOZLxAQTue31Kc2kUZ5XEqC0qPsIU00KXfq2hGZ')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51N2yKrJkGwVLZn0MWLDfYk4c5xavxLgtE0ekZXv2nkhMAenq732FrmKK2bIqOtuf3wo5y8uT9U4XkcPNizE4xsR10098NiXH3T')
