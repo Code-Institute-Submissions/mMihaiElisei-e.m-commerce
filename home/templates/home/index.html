@@ -11,7 +11,7 @@
     <!-- Deals and offers boxes -->
     <div class="row mt-5">
         <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=clearance">
                 <div class="clearance-wrapper">
                     <div class="main-subtitles text-center">
                         <h2 class="logo-font">Clearance</h2>
@@ -21,7 +21,7 @@
             </a>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=deals">
                 <div class="deals-wrapper text-center">
                     <div class="main-subtitles">
                         <h2 class="logo-font">Deals</h2>
@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="#">
+            <a href="{% url 'products' %}?category=new_arrivals">
                 <div class="new-arrivals-wrapper text-center">
                     <div class="main-subtitles">
                         <h2 class="logo-font">New Arrivals</h2>
@@ -47,7 +47,23 @@
             <h1 class="text-center logo-font">popular categories</h1>
             <hr class="w-50">
         </div>
-        categories
+        {% for category in categories %}
+        {% if category.is_popular %}
+        <div class="col-sm-12 col-md-4 col-lg-4 p-3">
+            <div>
+                <a href="{% url 'products' %}?category={{ category.name }}" class="category-name">{{ category.name }}
+                    {% if category.image %}
+                    <img class="card-img-top img-fluid rounded" src="{{ category.image.url }}" alt="{{ category.name }}"
+                        style="height: 300px;">
+                    {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}"
+                        style="height: 300px;">
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
