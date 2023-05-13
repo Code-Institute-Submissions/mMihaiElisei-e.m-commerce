@@ -8,37 +8,24 @@
             <img src="{{MEDIA_URL}}banner.jpg" alt="Main Page Banner" class="img-fluid">
         </div>
     </div>
-    <!-- Deals and offers boxes -->
+    <!-- Display products-->
     <div class="row mt-5">
-        <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="{% url 'products' %}?category=clearance">
-                <div class="clearance-wrapper">
-                    <div class="main-subtitles text-center">
-                        <h2 class="logo-font">Clearance</h2>
-                        <small>Check out our clearance products!</small>
-                    </div>
-                </div>
-            </a>
+        <div class="col-12 my-3">
+            <h1 class="text-center logo-font">Explore our shop!</h1>
+            <hr class="w-50">
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="{% url 'products' %}?category=deals">
-                <div class="deals-wrapper text-center">
-                    <div class="main-subtitles">
-                        <h2 class="logo-font">Deals</h2>
-                        <small>Check out our new Deals!</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4">
-            <a href="{% url 'products' %}?category=new_arrivals">
-                <div class="new-arrivals-wrapper text-center">
-                    <div class="main-subtitles">
-                        <h2 class="logo-font">New Arrivals</h2>
-                        <small>Check out New Arrivals!</small>
-                    </div>
-                </div>
-            </a>
+        <div class="owl-carousel owl-theme">
+            {% for product in products %}
+            {% if product.image %}
+            <div class="item">
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}"
+                        style="height: 250px; width: 250px;">
+                </a>
+                <h6>{{ product.name }}</h6>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
     <!-- Popular categories -->
@@ -66,4 +53,27 @@
         {% endfor %}
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+</script>
 {% endblock %}

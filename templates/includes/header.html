@@ -43,7 +43,7 @@
             <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
                 <div class="category-wrap dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bars"></i> All Categories
+                        <i class="fa fa-bars"></i> Store
                     </button>
                     <div class="dropdown-menu">
                         <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
@@ -102,8 +102,8 @@
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                     href="{% url 'view_cart' %}">
                     <div class="text-center">
-                        <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                        <p class="my-0">
+                        <div><i class="fas fa-shopping-cart fa-lg text-black"></i></div>
+                        <p class="my-0 text-black">
                             {% if grand_total %}
                             {% if cart_items %}
                             &euro;{{ grand_total|floatformat:2 }}
