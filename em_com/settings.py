@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-from django.db.backends.postgresql.psycopg_any import IsolationLevel
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -125,12 +124,7 @@ WSGI_APPLICATION = "em_com.wsgi.application"
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': {
-           "ENGINE": dj_database_url.parse(os.environ.get('DATABASE_URL')),
-           "OPTIONS": {
-                "isolation_level": IsolationLevel.SERIALIZABLE,
-            },
-        }
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
