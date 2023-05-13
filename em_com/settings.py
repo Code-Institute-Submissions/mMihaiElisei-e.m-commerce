@@ -25,8 +25,8 @@ SECRET_KEY = "django-insecure-@bgjbr05a5jk2qg%nq=$(49yf-k4$fon&v(591rbj7i3e*wbt6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', 'https://127.0.0.1']
+ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', '127.0.0.1', 'em-comm.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', 'https://127.0.0.1', 'https://em-comm.herokuapp.com/']
 
 # Application definition
 
@@ -120,12 +120,18 @@ WSGI_APPLICATION = "em_com.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
