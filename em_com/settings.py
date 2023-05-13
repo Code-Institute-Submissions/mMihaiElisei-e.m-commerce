@@ -26,8 +26,8 @@ SECRET_KEY = "django-insecure-@bgjbr05a5jk2qg%nq=$(49yf-k4$fon&v(591rbj7i3e*wbt6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', '127.0.0.1', 'em-comm.herokuapp.com/']
-CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', 'https://127.0.0.1', 'https://em-comm.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', '127.0.0.1', 'em-comm.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', 'https://127.0.0.1', 'https://em-comm.herokuapp.com']
 
 # Application definition
 
