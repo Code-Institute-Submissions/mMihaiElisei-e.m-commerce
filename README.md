@@ -88,5 +88,54 @@ This website was created for academic purposes, all photos were searched and dow
 * Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
 * Buttons for login, register and logout are on a dropdown menu
 * In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
-* Banner is centered on the top 
-* 
+* Side menu to filter products by category, price and rating
+* Products are displayed with names, price, category and rating
+
+
+## Products Details:
+![Products Details page whireframe image](/media/product-detail.PNG)
+
+* Logo is placed in the top left corner;
+* I used FontAwsome for icons to the entire site;
+* Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
+* Buttons for login, register and logout are on a dropdown menu
+* In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
+* Product image is shown on the left side
+* Product details are on the rigth side with review stars also
+* Under the product details I have added product reviwe. A user must be logged in to be able to submit a review
+
+
+## Cart:
+![Cart page whireframe image](/media/cart.PNG)
+
+* Logo is placed in the top left corner;
+* I used FontAwsome for icons to the entire site;
+* Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
+* Buttons for login, register and logout are on a dropdown menu
+* In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
+* A teble is displayed with the products added to cart. In the table I put product image, product variation if it`s the case, an input to increse and decrese the product quantity, a button to remove the product from cart no metter the quantity added.
+* On the right side I displayed the total of the purchase with price for items, VAT and delivery and to buttons one for checout and one to go back to products search
+
+
+## Checkout:
+![Cart page whireframe image](/media/checkout.PNG)
+
+* Logo is placed in the top left corner;
+* I used FontAwsome for icons to the entire site;
+* Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
+* Buttons for login, register and logout are on a dropdown menu
+* In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
+* A form is displayed on the left to compleate shipping details.
+* On the right side si a table with products that you are about to pay with details and price.
+* Under the form is an input from Stripe to add card details with two buttons one to go back to the cart and one to proced checkout
+
+## Checkout Informations:
+![Cart page whireframe image](/media/checkout-infromation.PNG)
+
+* Logo is placed in the top left corner;
+* I used FontAwsome for icons to the entire site;
+* Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
+* Buttons for login, register and logout are on a dropdown menu
+* In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
+* A list with checkout information is displayed including order number, shipping details and Personal Informations
+* Under the list I put a button to go to the perosnal profile
