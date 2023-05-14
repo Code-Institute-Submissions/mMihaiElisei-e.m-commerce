@@ -1,4 +1,4 @@
-# HUMAN-RESOURCES APP
+# EM-Commerce
 # Table of Contents
 * [Introduction](#introduction)
 * [User Expereince (UX) design](#1-user-expereince-ux-design)
@@ -64,7 +64,7 @@ This website was created for academic purposes, all photos were searched and dow
 [Balsamiq](https://balsamiq.com/) was used to create wireframes of the website. This was very useful as it gives the template of the UI. Wireframes were designed for web browser and a mobile browser format:
 
 ## Main Page:
-![Main page whireframe image](/media/main-page.PNG.PNG)
+![Main page whireframe image](/media/main-page.PNG)
 
 # 2. Features
 
@@ -80,3 +80,13 @@ This website was created for academic purposes, all photos were searched and dow
 * Popular categories are listed on the main page with catecogires links
 
 
+## Products Page:
+![Products page whireframe image](/media/products-page.PNG)
+
+* Logo is placed in the top left corner;
+* I used FontAwsome for icons to the entire site;
+* Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
+* Buttons for login, register and logout are on a dropdown menu
+* In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
+* Banner is centered on the top 
+* 
