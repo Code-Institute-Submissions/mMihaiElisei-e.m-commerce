@@ -226,6 +226,7 @@ I have tested my site on multiple devices. These include:
 | Add Product | Form is rendered correctly and the new product is displayed on products page | PASS |
 | Update Product | The correct product is displayed and the new product descriptions are saved correctly | PASS |
 | Delete a product | From the cart I can delete a product if I press delete no matter the quantity, I can decrease the quantity with + and - buttons and if I am a Site Admin if I delete a product it will be deleted from the database | PASS |
-| Searc and Sort | If I type the correct searh criteria the product from that category will be displayed and I can sort products by price, category, rating  | PASS |
+| Search and Sort | If I type the correct searh criteria the product from that category will be displayed and I can sort products by price, category, rating  | PASS |
+| Product review | If I leave a comment it will be displayed on the product details with the stars and for each product the rating average is displayed correctly  | PASS |
 
 
