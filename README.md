@@ -230,3 +230,11 @@ I have tested my site on multiple devices. These include:
 | Product review | If I leave a comment it will be displayed on the product details with the stars and for each product the rating average is displayed correctly  | PASS |
 
 
+
+## 4.3 Lighthouse Reports:
+
+## Home:
+![Lighthouse report](/media/home_lighthouse.PNG)
+
+## Products:
+![Lighthouse report](/media/products_lighthouse.PNG)
