@@ -139,3 +139,93 @@ This website was created for academic purposes, all photos were searched and dow
 * In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
 * A list with checkout information is displayed including order number, shipping details and Personal Informations
 * Under the list I put a button to go to the perosnal profile
+
+## My Profile:
+![Cart page whireframe image](/media/profile.PNG)
+
+* Logo is placed in the top left corner;
+* I used FontAwsome for icons to the entire site;
+* Login Button is placed on the top right corner. If a user is loged in the button will change to logout;
+* Buttons for login, register and logout are on a dropdown menu
+* In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
+* On the profile page I put a side menu with links to personal details, order history, add a new product if user is superuser, and change password
+* on the main profile page the from with personal details is displayed
+
+# 3. Technologies Used
+
+* HTML5 was used for structuring and presenting content of the website;
+* CSS3 was used to provide the style to the content written in a HTML;
+* JavaScript was used to add some nice alerts;
+* Django was used as web framework;
+* Django Template was used as a templating language for Django to display backend data to HTML;
+* Django Allauth was used for user authentication, registration, and account management.
+* Django Crispy Form was used to control the rendering of the forms;
+* Django countries was used to list all contries dynamicly;
+* Stripe was used for card payments;
+* OwlCarousel was used to display products on the main page
+* Gunicorn was used as Python WSGI HTTP Server for UNIX to support the deployment of Django application;
+* Cloudinary has been used as image management solution;
+* ElephantSQL database was used in production, as a service based on PostgreSQL;
+* Heroku was used to deploy the website
+* Balsamiq was used to create wireframes of the website;
+* Font Awsome was used to improt icons to the sites;
+* Google Fonts was used to import font-family 'Raleway' into style.css file;
+* Chrome was used to debug and test the source code using HTML5 as well as to test site responsiveness;
+* Github was used to create the repository and to store the cproject's code after pushed from Git;
+* Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub
+* Gitpod was used as the Code Editor for the site;
+* Color Hunt was used to select the background and font color in the website;
+* W3C Markup and Jigsaw validation tools were used to validate the HTML code and CSS style used in the proejct;
+
+
+# 4. Testing
+
+## 4.1 Testing tools:
+
+* Google Developer Tools for debug and test css and JavaScript code;
+* W3C Validator Tools was used to check for any errors within my HTML pages:
+* W3C CSS Validation was used to check for any error within my CSS stylesheet
+
+## 4.2 Manual Testing
+
+I have tested my site on multiple devices. These include:
+* Galaxy Fold (280 x 653);
+* Iphone 6/7/8 Plus (414 x 736);
+* Ipad (768 x 1024);
+* Nest Hub (1024 x 600);
+
+
+## Main Page
+
+| TEST | OUTCOME | PASS / FAIL |
+|:---:|:---:|:---:|
+| Login Button| When Login is clicked I am redirected to login page | PASS |
+| Logout Button| When Logout is clicked I am redirected to index page | PASS |
+| Products are displayed| I can see products displayed and when I click on a product it takes me to the rigth product details | PASS |
+| Categories are displayed| I can see categories displayed and when I click on a category it takes me to the rigth filtered products list | PASS |
+| Responsive | All pages and elements are responsive (mobile and desktop) using differnt breakpoints. | PASS |
+| Text | Checked if all fonts and colors used are consistent or not | PASS |
+
+## Dashboard Section
+
+| TEST | OUTCOME | PASS / FAIL |
+|:---:|:---:|:---:|
+| Menus |All menus links redirect me to the right url | PASS |
+| Username | Username is displayed for the right user when he is loged in | PASS |
+| Logout Button | When I am loged in the login button change to logout | PASS |
+| Products | All products are displayed on product page correctly | PASS |
+| Product Detail | When I click on a product it takes me to the rigth product | PASS |
+| Product Image | When I click on the image it opens in a new window | PASS |
+| Add to cart | Products are added to cart correctly | PASS |
+| Product Variation | For clothes category I can select size and color | PASS |
+| Product Variation on cart | When I add the same product on cart with different variation it will add it as a new product and if I add the same product with the same variation it will increse the quantity | PASS |
+| Checkout | Form is rendered correctly and products that are about to be purchased are displayed correctly | PASS |
+| Order | After checkout the order description is rendered including the order number | PASS |
+| Profile | On the home page of the profile form with personal details is rendered correctly | PASS |
+| Order History | On the order history all orders are displayed in a table | PASS |
+| Add Product | Form is rendered correctly and the new product is displayed on products page | PASS |
+| Update Product | The correct product is displayed and the new product descriptions are saved correctly | PASS |
+| Delete a product | From the cart I can delete a product if I press delete no matter the quantity, I can decrease the quantity with + and - buttons and if I am a Site Admin if I delete a product it will be deleted from the database | PASS |
+| Searc and Sort | If I type the correct searh criteria the product from that category will be displayed and I can sort products by price, category, rating  | PASS |
+
+
