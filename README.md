@@ -238,3 +238,37 @@ I have tested my site on multiple devices. These include:
 
 ## Products:
 ![Lighthouse report](/media/products_lighthouse.PNG)
+
+* Because of the search and refresh buttons from the search bar Accessibility is under 90!
+
+
+# 5. Bugs
+
+* During the development process I had multiple bugs with the page rendering and content displayed. Ussualy some missed informations in my views was the problem all fixed;
+* I had errors during the deployment on heroku, for some reason static files ware not rendered on the page eaven if the static files ware successfuly uploaded on the AWS S3 bucket. I couldn`t fix this issue and after a few days of trying I had to rebuild the project.
+* On lighthouse report accessibility is under 90 because of the buttons beside search bar . This wasn`t fix
+* I had multiple issues with stripe webhooks Error 302 that was because the codeanywhere rediercted the page so I had to use VS Code local.
+
+# 6. Deployment
+
+ The site was deployed to Heroku using the following steps: 
+
+ * Sign up to GutHub;
+ * Create a new repository on GitHub;
+ * Link Github project to Heroku
+ * Add Procfile
+ * Update settings.py
+ * Add Environment Variables
+ * Automatic deployment by Heroku
+ * Created a new account on AWS
+ * Created a new bucket, user and user group with the rigth setting and policyes
+ * Linked Bucket with the project to store static files
+
+
+ # 7. Acknowledgement
+
+* This App was created for academic purposes, all photos were searched and downloaded from the[Giphy website](https://giphy.com/) and [Google website](https://google.com/)
+* For README.md file, reference of https://github.com/dhakal79/Portfolio-project-MS1 was considered; 
+* Most of the checkout app was from Btique Ado project form CI 
+
+
