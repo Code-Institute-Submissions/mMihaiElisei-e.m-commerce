@@ -2,8 +2,8 @@
     <div class="container py-5">
         <div class="row py-4">
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <p class="font-italic text-muted uppercase">Buy safely from our site!</p>
-                <p class="font-italic text-muted uppercase">Follow us on social media</p>
+                <p class="font-italic text-black uppercase">Buy safely from our site!</p>
+                <p class="font-italic text-black uppercase">Follow us on social media</p>
                 <ul class="list-inline mt-4">
                     <li class="list-inline-item"><a href="https://twitter.com/" target="_blank" title="twitter"><i
                                 class="fa fa-twitter fa-lg text-black"></i></a></li>
@@ -30,17 +30,17 @@
                 <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
                 <ul class="list-unstyled mb-0">
                     {% if request.user.is_authenticated %}
-                    <li class="mb-2"><a href="{% url 'account_login' %}" class="text-muted">Login</a></li>
+                    <li class="mb-2"><a href="{% url 'account_login' %}" class="text-black">Login</a></li>
                     {% else %}
-                    <li class="mb-2"><a href="{% url 'account_logout' %}" class="text-muted">Logout</a></li>
+                    <li class="mb-2"><a href="{% url 'account_logout' %}" class="text-black">Logout</a></li>
                     {% endif %}
-                    <li class="mb-2"><a href="{% url 'account_signup' %}" class="text-muted">Register</a></li>
-                    <li class="mb-2"><a href="{% url 'products' %}" class="text-muted">All Products</a></li>
+                    <li class="mb-2"><a href="{% url 'account_signup' %}" class="text-black">Register</a></li>
+                    <li class="mb-2"><a href="{% url 'products' %}" class="text-black">All Products</a></li>
                 </ul>
             </div>
             <div class="col-lg-4 col-md-6 mb-lg-0">
                 <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
-                <p class="text-muted mb-4 uppercase">Subscribe and recive the latest products news that fits you</p>
+                <p class="text-black mb-4 uppercase">Subscribe and recive the latest products news that fits you</p>
                 <div>
                     <div class="input-group">
                         <div id="mc_embed_signup">
@@ -69,7 +69,7 @@
                                     <div class="optionalParent">
                                         <div class="clear foot">
                                             <input type="submit" value="Subscribe" name="subscribe"
-                                                id="mc-embedded-subscribe" class="button">
+                                                id="mc-embedded-subscribe" class="button btn-black">
 
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
     <!-- Copyrights -->
     <div class="bg-light py-4">
         <div class="container text-center">
-            <p class="text-muted mb-0 py-2">© 2023 Mihai Elisei</p>
+            <p class="text-black mb-0 py-2">© 2023 Mihai Elisei</p>
         </div>
     </div>
 </footer>
