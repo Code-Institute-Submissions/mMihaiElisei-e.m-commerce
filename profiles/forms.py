@@ -1,6 +1,5 @@
 from django import forms
 from .models import UserProfile
-from products.models import Product, Category
 
 
 class UserProfileForm(forms.ModelForm):
@@ -37,8 +36,3 @@ class UserProfileForm(forms.ModelForm):
             self.fields[field].label = False
 
 
-class ProductForm(forms.ModelForm):
-
-    class Meta:
-        model = Product
-        fields = '__all__'

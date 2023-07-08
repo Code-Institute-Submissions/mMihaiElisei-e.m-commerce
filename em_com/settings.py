@@ -21,13 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'asdasdasd')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', '127.0.0.1', 'em-comm.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-mihaielisei-em-commerce-xi7ftne43u.us2.codeanyapp.com', 'https://127.0.0.1', 'https://em-comm.herokuapp.com']
+DEBUG = True
+
+ALLOWED_HOSTS = ['8000-mihaielisei-emcommerce-4ucwt6alrxs.ws-eu101.gitpod.io', '127.0.0.1', 'em-comm.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['8000-mihaielisei-emcommerce-4ucwt6alrxs.ws-eu101.gitpod.io', 'https://127.0.0.1', 'https://em-comm.herokuapp.com']
 
 # Application definition
 
@@ -122,17 +124,27 @@ WSGI_APPLICATION = "em_com.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": BASE_DIR / "db.sqlite3",
+#         }
+#     }
+
+
+DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
+
+
 
 
 # Password validation

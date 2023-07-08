@@ -5,8 +5,7 @@ from .models import UserProfile
 from checkout.models import Order
 from products.models import Product
 from django.contrib.auth.decorators import login_required
-from .forms import UserProfileForm, ProductForm
-
+from .forms import UserProfileForm
 # Create your views here.
 
 
@@ -63,70 +62,3 @@ def order_history(request, order_number):
     return render(request, template, context)
 
 
-@login_required
-def add_product(request):
-    """Add a product to the store"""
-
-    if not request.user.is_superuser:
-        messages.error(
-            request, 'Sorry, only store admin can add a new product')
-        return redirect(reverse('home'))
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
-            messages.success(request, "Product added successfully!")
-            return redirect(reverse('product_detail', args=[product.id]))
-        else:
-            messages.error(
-                request, "Faild to add product. Please review the form!")
-    else:
-        form = ProductForm()
-    template = 'profiles/add_product.html'
-    context = {
-        'form': form
-    }
-    return render(request, template, context)
-
-
-@login_required
-def edit_product(request, product_id):
-    """Edit a product in store"""
-    if not request.user.is_superuser:
-        messages.error(
-            request, 'Sorry, only store admin can edit a product')
-        return redirect(reverse('home'))
-    product = get_object_or_404(Product, pk=product_id)
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Product was updated successfully!")
-            return redirect(reverse('product_detail', args=[product_id]))
-        else:
-            messages.error(
-                request, "Faild to update product. Please review the form!")
-    else:
-        form = ProductForm(instance=product)
-        messages.info(request, f"You are editing {product.name}")
-
-    template = 'profiles/edit_product.html'
-    context = {
-        'form': form,
-        'product': product,
-    }
-    return render(request, template, context)
-
-
-@login_required
-def delete_product(request, product_id):
-    """Delete a product from store"""
-    if not request.user.is_superuser:
-        messages.error(
-            request, 'Sorry, only store admin can delete a product')
-        return redirect(reverse('home'))
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, "Product deleted!")
-
-    return redirect(reverse('products'))
