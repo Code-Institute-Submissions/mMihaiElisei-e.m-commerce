@@ -106,10 +106,9 @@ def add_to_cart(request, product_id):
 
 def remove_from_cart(request, product_id, cart_item_id):
     """ A view to decrese items number from the cart """
-
-    cart = Cart.objects.get(cart_id=_cart_id(request))
-    product = get_object_or_404(Product, id=product_id)
     try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        product = get_object_or_404(Product, id=product_id)
         cart_item = CartItem.objects.get(
             product=product, cart=cart, id=cart_item_id)
         if cart_item.quantity > 1:
@@ -117,23 +116,33 @@ def remove_from_cart(request, product_id, cart_item_id):
             cart_item.save()
             messages.success(
                 request, f'Removed {product.name} from your cart!')
-
+            
         else:
             cart_item.delete()
             messages.success(
                 request, f'Removed {product.name} from your cart!')
-    except Exception as e:
-        messages.error(request, f'Error removing item: {e} from your cart!')
+    except Cart.DoesNotExist:
+        product = get_object_or_404(Product, id=product_id)
+        cart_item = CartItem.objects.get(
+            product=product, id=cart_item_id)
+        cart_item.delete()
+        return render(request, 'cart/404.html')
     return redirect('view_cart')
 
 
 def remove_cart_item(request, product_id, cart_item_id):
     """ A view to remove items from the cart """
-
-    cart = Cart.objects.get(cart_id=_cart_id(request))
-    product = get_object_or_404(Product, id=product_id)
-    cart_item = CartItem.objects.get(
-        product=product, cart=cart, id=cart_item_id)
-    cart_item.delete()
-    messages.success(request, f'Removed {product.name} from your cart!')
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        product = get_object_or_404(Product, id=product_id)
+        cart_item = CartItem.objects.get(
+            product=product, cart=cart, id=cart_item_id)
+        cart_item.delete()
+        messages.success(request, f'Removed {product.name} from your cart!')
+    except Cart.DoesNotExist:
+        product = get_object_or_404(Product, id=product_id)
+        cart_item = CartItem.objects.get(
+            product=product, id=cart_item_id)
+        cart_item.delete()
+        return render(request, 'cart/404.html')
     return redirect('view_cart')
