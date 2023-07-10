@@ -35,10 +35,28 @@ E.M-Commerce is an online shop which can sell all kind of products from clothes 
 * The app is interactive, with nice alerts after each action;
 * Responsive design for all screen/device sizes like mobile, tablet and desktop;
 
+# Scope
+
+## First Phase
+* Responsive design
+* Account registration
+* View a list of products and each product individualy
+* Ability to search and sort products
+* Create, edit and delete products
+
+## Second Phase
+* Add a comment and rate products
+* Add product variations for clothes (color and size)
+* Create user profiles 
+* Place an order and be able to do online payments
+
 
 # 1.1 User Goals
 
-The app is designed for shoppers that want to do their shopping online and secure;
+* As a Site Admin, I want to manage the site content.
+* As a Site User, I want to be able to interact with the content.
+* As a Site User, I want the information to be easy to find and read.
+* As a Site User, see products individualy, add comments and rate a product.
 
 # 1.2 User Expectations
 
@@ -47,6 +65,10 @@ The content of the app changes at every action of a user. Folloiwng user's expec
 * The site structure is designed considering the expectation of users to be simple and easy to use;
 * The user interface is easy to navigate;
 * Responsive design for all screen/device sizes like mobile, tablet and desktop;
+
+# User Stories
+
+GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress.
 
 # 1.3 Color Scheme
 
@@ -66,7 +88,7 @@ This website was created for academic purposes, all photos were searched and dow
 ## Main Page:
 ![Main page whireframe image](/media/main-page.PNG)
 
-# 2. Features
+
 
 # Main Section
 
