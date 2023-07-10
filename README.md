@@ -4,9 +4,11 @@
 * [User Expereince (UX) design](#1-user-expereince-ux-design)
     * [User Goals](#11-user-goals)
     * [User Expectations](#12-user-expectations)
-    * [Color Scheme](#13-color-scheme)
-    * [Images and Log](#14-images-and-logo)
-    * [Site Skeleton](#15-site-skeleton)
+    * [User Stories](#13-user-stories)
+    * [E-commerce Business Model](#14-e-commerce-business-model)
+    * [Color Scheme](#15-color-scheme)
+    * [Images and Logo](#16-images-and-logo)
+    * [Site Skeleton](#17-site-skeleton)
 * [Features](#2-features)
     * [Main Section](#main-section)
 * [Technologies Used](#3-technologies-used)
@@ -66,22 +68,50 @@ The content of the app changes at every action of a user. Folloiwng user's expec
 * The user interface is easy to navigate;
 * Responsive design for all screen/device sizes like mobile, tablet and desktop;
 
-# User Stories
+# 1.3 User Stories
 
 GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress.
 
-# 1.3 Color Scheme
+# 1.4 E-commerce Business Model 
+
+## Executive Summary:
+* This document presents a business model for EM-Commerce, an e-commerce platform. It provides an overview of the platform's mission, target market, product offering, marketing strategies and operational considerations.
+
+## Introduction:
+* EM-Commerce is an e-commerce platform where users can purchase different products from clothes to electronics. 
+
+## Business Overview:
+* EM-Commerce provides various products and deliver the products to the clients. Payments are made online and secure thanks to our online payment system. If the purchase value excedes 50 Euro the delivery will be free.
+
+## Target Market:
+* Targeted users are based in Ireland at the moment but in the future we want to increase our market to Europe.
+
+## Product Offering:
+* We offer a vast category of products at the moment from Clotes to Electronics and Furniture. Here is a list of products that you will find on our platform: Clothes, Computing, Furniture, Gaming, Home Appliances, Phones & Tablets, TV & Audio. For Clothes we have a variation of products with different sizes and colors that users can pick.
+
+
+## Revenue Streams:
+* Our revenue conssists in our sold products. For clients that are purchasing products for more then 50 Euro we provide free delivery across the entire country.
+
+## Operational Considerations:
+* We have implemented an effective inventory management system to track product availability, stock levels, and reorder points. Our stocks are  real-time inventory data to prevent overselling or stockouts selling. We have implemented the comments and rating section for each individual product to handle inquiries, complaints, and support requests.
+* Also we have implemented a data privacy and security measures to protect customer information and maintain their trust that Comply with applicable data protection regulations, such as GDPR or CCPA.
+
+## Conclusion:
+* All these be considered EM-Commerce will progress day by day offering quality and trust for our clients. Our clients needs to take advantage of our comments section and express their opinion about our products and our delivery system because this will help us to improve our platform and provide an user experience.
+
+# 1.5 Color Scheme
 
 The choice of website right foreground and background colour is essential that decides the site visitors wheather to emote the site or not. I used [Color Hunt](https://colorhunt.co/) to select the background and foreground color. Colors that i used are:
 
 * the content it`s mostly blank and white and because the app will store many images it will take the colors from them;
 * and some bootstrp5 colors: warning, info, primary, alert
 
-# 1.4 Images and Logo
+# 1.6 Images and Logo
 
 This website was created for academic purposes, all photos were searched and downloaded from [Giphy website](https://giphy.com/) and [Google search](https://google.com/)
 
-# 1.5 Site Skeleton
+# 1.7 Site Skeleton
 
 [Balsamiq](https://balsamiq.com/) was used to create wireframes of the website. This was very useful as it gives the template of the UI. Wireframes were designed for web browser and a mobile browser format:
 
@@ -172,6 +202,14 @@ This website was created for academic purposes, all photos were searched and dow
 * In the footer I put links to social media, link to Privacy Policy file, categories are listed, login and register links and newsletter
 * On the profile page I put a side menu with links to personal details, order history, add a new product if user is superuser, and change password
 * on the main profile page the from with personal details is displayed
+
+
+# 2. Features
+
+* Header, footer and navigation bar are consistent through all pages.
+* Links and forms provide clear feedback to the site user.
+* The opportunity to add comments and rate products will have all the users that are registered and logged in.
+* A custom 404-error page is available for cart if the cart doesn`t exists.
 
 # 3. Technologies Used
 
