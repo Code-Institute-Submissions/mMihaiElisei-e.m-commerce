@@ -211,6 +211,38 @@ This website was created for academic purposes, all photos were searched and dow
 * The opportunity to add comments and rate products will have all the users that are registered and logged in.
 * A custom 404-error page is available for cart if the cart doesn`t exists.
 
+# Site Presentation
+![Header and menu](/media/header-and-menu.png)
+* On the header I have the logo the search bar, a small welcome text with the username, the menu to login and the cart!
+
+![Products carousel](/media/products-carousel.png)
+* Also on the main page I created a small carousel to present a part of the products so the users can have an ideea of what they will find on the platform.
+
+![Popular categories](/media/popular-categories.png)
+* Under the products carousel I have displayed some of the popular categories that users can find on the website so that will make it easier to navigate and find what they are looking for.
+
+![Footer](/media/footer.png)
+* Footer is consitent to the entire site and there users can access the social media, categories, users can login or register and they can subscribe to the platform to recive new offers on their email.
+
+![Products Page](/media/products-page-presentation.png)
+* On the products page users can see all products displayed and sort them as by name, price or category.
+
+![Products Details](/media/product-detail-image.png)
+* Here users can see the details of the products, and add them to cart
+
+
+![Customer Reviews](/media/customer-reviews.png)
+* All users can place a review for each products and rate them, to be able to leave a review user must be logged in
+
+![Shopping Cart](/media/shopping-cart.png)
+* All pruducts are displayed in the shopping cart wehere you can increese or decreese the quantity of the products or remove them from the cart 
+
+![Checkout Page](/media/checkout-page-image.png)
+* The form with users details needs to be completed for shipping and payment details. Users will continue to see what they will purchase and they can keep track of they order.
+
+![Profile Page](/media/checkout-page-image.png)
+* All users will have a profile created when they register. If user is an admin will be able to add new products from the profile page. If user is a regular customer will be able to see the personal details, order history and manage their password.
+
 # 3. Technologies Used
 
 * HTML5 was used for structuring and presenting content of the website;
@@ -266,7 +298,7 @@ I have tested my site on multiple devices. These include:
 | Responsive | All pages and elements are responsive (mobile and desktop) using differnt breakpoints. | PASS |
 | Text | Checked if all fonts and colors used are consistent or not | PASS |
 
-## Dashboard Section
+## Products and Purchase Testing
 
 | TEST | OUTCOME | PASS / FAIL |
 |:---:|:---:|:---:|
@@ -288,7 +320,6 @@ I have tested my site on multiple devices. These include:
 | Delete a product | From the cart I can delete a product if I press delete no matter the quantity, I can decrease the quantity with + and - buttons and if I am a Site Admin if I delete a product it will be deleted from the database | PASS |
 | Search and Sort | If I type the correct searh criteria the product from that category will be displayed and I can sort products by price, category, rating  | PASS |
 | Product review | If I leave a comment it will be displayed on the product details with the stars and for each product the rating average is displayed correctly  | PASS |
-
 
 
 ## 4.3 Lighthouse Reports:
