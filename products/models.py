@@ -22,7 +22,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
@@ -39,7 +39,6 @@ class Product(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
-
     def average_review(self):
         """Calculate the average ratings of the reviews"""
         reviews = ReviewRating.objects.filter(
@@ -48,7 +47,7 @@ class Product(models.Model):
         if reviews['average'] is not None:
             avg = float(reviews['average'])
         return avg
-    
+
     def count_reviews(self):
         """Count the reviews"""
         reviews = ReviewRating.objects.filter(

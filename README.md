@@ -321,6 +321,19 @@ I have tested my site on multiple devices. These include:
 | Search and Sort | If I type the correct searh criteria the product from that category will be displayed and I can sort products by price, category, rating  | PASS |
 | Product review | If I leave a comment it will be displayed on the product details with the stars and for each product the rating average is displayed correctly  | PASS |
 
+## HTML Validation
+
+![HTML Validation](/media/html-validation.png)
+* Most of the HTML pages have errors beacuse of the use of django code passed in the HTML Tags
+
+## CSS Validation
+![CSS Validation](/media/css-validation.png)
+* No errors ware found in the CSS 
+
+## Python Validation
+![Python Validation](/media/python-check.png)
+* Most of the errors are because the lines are to long but because some part of the code is easyer to be read I chose to leave it like that like in exemple above!
+
 
 ## 4.3 Lighthouse Reports:
 

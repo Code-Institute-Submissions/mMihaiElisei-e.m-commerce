@@ -4,13 +4,14 @@ from .models import Cart, CartItem
 from django.contrib import messages
 
 
-
 def view_cart(request):
     """ A view that renders the cart contents page """
     return render(request, 'cart/cart.html')
 
+
 def _cart_id(request):
-    """ A private function to get the cart id from the current session or create a new session """
+    """ A private function to get the cart id from the
+     current session or create a new session """
 
     cart = request.session.session_key  # Get the session id
     if not cart:
@@ -21,8 +22,7 @@ def _cart_id(request):
 
 def add_to_cart(request, product_id):
     """ A view that manages add items to the cart
-        and products variation 
-     """
+        and products variation"""
 
     product = Product.objects.get(id=product_id)
     product_variation = []
@@ -40,7 +40,7 @@ def add_to_cart(request, product_id):
                     variation_value__iexact=value,
                 )
                 product_variation.append(variation)
-            except:
+            except Exception:
                 pass
 
     try:
@@ -68,14 +68,17 @@ def add_to_cart(request, product_id):
         )
         existing_variation_list = []
         id = []
-        for item in cart_item:  # If the cart item exists loop the cart item and get variations for each item
+        # If the cart item exists loop the cart item
+        # and get variations for each item
+        for item in cart_item:
             existing_variation = item.variations.all()
             existing_variation_list.append(list(existing_variation))
             id.append(item.id)
 
         if product_variation in existing_variation_list:
             index = existing_variation_list.index(product_variation)
-            # Get the item id of the correct cart item to increse the quantity of the correct cart item
+            # Get the item id of the correct cart item
+            # to increse the quantity of the correct cart item
             item_id = id[index]
             item = CartItem.objects.get(product=product, id=item_id)
             item.quantity += 1
@@ -100,7 +103,6 @@ def add_to_cart(request, product_id):
             cart_item.variations.clear()
             cart_item.variations.add(*product_variation)
         cart_item.save()
-    
     return redirect('view_cart')
 
 
@@ -116,7 +118,6 @@ def remove_from_cart(request, product_id, cart_item_id):
             cart_item.save()
             messages.success(
                 request, f'Removed {product.name} from your cart!')
-            
         else:
             cart_item.delete()
             messages.success(

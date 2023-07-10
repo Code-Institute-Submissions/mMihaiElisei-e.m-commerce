@@ -33,6 +33,7 @@ def profile(request):
 
     return render(request, template, context)
 
+
 @login_required
 def my_orders(request):
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -60,5 +61,3 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-
-

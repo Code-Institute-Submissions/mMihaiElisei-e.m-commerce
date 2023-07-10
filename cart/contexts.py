@@ -48,9 +48,7 @@ def cart_contents(request):
 
 
 def counter(request):
-    """ A function that will count the 
-        number of products from cart
-    """
+    """ A function that will count the number of products from cart"""
     cart_count = 0
 
     if 'admin' in request.path:
